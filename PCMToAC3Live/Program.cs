@@ -92,10 +92,11 @@ namespace PCMToAC3Live
                 }
             }
         }
+
         private static void NStream_SingleBlockRead(object sender, SingleBlockReadEventArgs e)
         {
 
-            Console.WriteLine(String.Join (",",e.Samples.Select(x=>Math.Round(x,4).ToString())));
+            Console.WriteLine(String.Join(",", e.Samples.Select(x => Math.Round(x, 4).ToString())));
 
 
             if (queueBuf == null)
@@ -113,7 +114,7 @@ namespace PCMToAC3Live
                 sampleQueue.Enqueue(queueBuf);
                 queueBuf = null;
                 counter = 0;
-                
+
             }
 
             //fstream.Write( e.Samples.Select(x=>(byte) x).ToArray(), 0, 6);
